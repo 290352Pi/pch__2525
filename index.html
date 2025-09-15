@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ช่องทางการติดตาม</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* วิดีโอพื้นหลัง */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* เอฟเฟกต์ไอคอนขยับ */
+    .social-btn i {
+      transition: transform 0.3s ease;
+    }
+    .social-btn:hover i {
+      transform: scale(1.2) rotate(5deg);
+    }
+
+    /* Slider สไตล์ทันสมัย สีไล่โทน */
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 120px;
+      height: 6px;
+      border-radius: 3px;
+      background: linear-gradient(to right, #ffffff, #ffffff, #ffffff); /* gradient สีตามธีม */
+      outline: none;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px solid #3b82f6;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s, border-color 0.2s;
+    }
+    input[type=range]:hover::-webkit-slider-thumb {
+      transform: scale(1.3);
+      border-color: #ffffff;
+      background: #ffffff;
+    }
+    input[type=range]::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px solid #3b82f6;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s, border-color 0.2s;
+    }
+
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center overflow-hidden">
+
+  <!-- เพลงพื้นหลัง autoplay muted ก่อน -->
+  <audio id="bg-music" src="music.mp3" autoplay loop muted></audio>
+
+  <!-- ตัวควบคุมเสียงมุมซ้ายบน -->
+  <div class="fixed top-4 left-4 flex items-center gap-2 bg-white/70 px-3 py-2 rounded-full shadow-lg z-50">
+    <button id="mute-btn" class="text-black text-lg"><i class="fas fa-volume-up"></i></button>
+    <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="1">
+  </div>
+
+  <!-- วิดีโอพื้นหลัง -->
+  <video autoplay muted loop id="bg-video">
+    <source src="bg.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- การ์ดโปรไฟล์ -->
+  <div class="bg-white/80 backdrop-blur-md rounded-2xl shadow-2xl p-10 max-w-md text-center transform hover:scale-[1.01] transition-transform duration-300 relative z-10">
+    
+    <!-- โปรไฟล์ -->
+    <div class="relative w-32 h-32 mx-auto">
+      <img src="profile.jpg" alt="Profile"
+           class="w-32 h-32 rounded-full shadow-xl ring-4 ring-cyan-300 object-cover transition-transform duration-500 hover:scale-105">
+    </div>
+
+    <h1 class="text-2xl font-bold mt-4">@pch__2525</h1>
+    <p class="text-gray-600">กำลังมองหาเพื่อนใหม่หรอคุณ เข้ามาแล้วอย่าลืมทักทายกันนะ!</p>
+
+    <!-- ปุ่มช่องทางติดตาม -->
+    <div class="mt-6 space-y-4">
+      <a href="https://instagram.com/pch__2525" target="_blank"
+         class="social-btn flex items-center justify-center gap-3 w-full bg-gradient-to-r from-pink-500 to-yellow-500 text-white py-3 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+         <i class="fab fa-instagram text-lg"></i> Instagram
+      </a>
+      <a href="https://www.tiktok.com/@pch_400" target="_blank"
+         class="social-btn flex items-center justify-center gap-3 w-full bg-black text-white py-3 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+         <i class="fab fa-tiktok text-lg"></i> TikTok
+      </a>
+      <a href="https://x.com/pozzzzzz57" target="_blank"
+         class="social-btn flex items-center justify-center gap-3 w-full bg-gradient-to-r from-sky-500 to-black text-white py-3 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+         <i class="fab fa-x-twitter text-lg"></i> Twitter / X
+      </a>
+    </div>
+
+    <!-- footer -->
+    <p class="text-xs text-gray-500 mt-6">© 2025 สร้างด้วยความรัก ❤️</p>
+  </div>
+
+  <!-- canvas หิมะตก -->
+  <canvas id="snow-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:20;"></canvas>
+
+  <script>
+    // ===============================
+    // เพลง + ควบคุมเสียง
+    // ===============================
+    const music = document.getElementById('bg-music');
+    const muteBtn = document.getElementById('mute-btn');
+    const volumeSlider = document.getElementById('volume-slider');
+
+    // ปลด mute อัตโนมัติเมื่อผู้ใช้ interact ครั้งแรก
+    document.addEventListener('click', () => {
+      if(music.muted){
+        music.muted = false;
+        music.play();
+      }
+    }, {once:true});
+
+    // Mute/Unmute
+    muteBtn.addEventListener('click', ()=>{
+      music.muted = !music.muted;
+      muteBtn.innerHTML = music.muted ? '<i class="fas fa-volume-mute"></i>' : '<i class="fas fa-volume-up"></i>';
+    });
+
+    // ปรับระดับเสียง
+    volumeSlider.addEventListener('input', ()=>{
+      music.volume = volumeSlider.value;
+      if(music.volume === 0){
+        music.muted = true;
+        muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+      } else {
+        music.muted = false;
+        muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+      }
+    });
+
+    // ===============================
+    // Canvas หิมะตก
+    // ===============================
+    const canvas = document.getElementById('snow-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const snowCount = 50;
+    const flakes = [];
+
+    for(let i=0;i<snowCount;i++){
+      flakes.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        r: Math.random()*4+2,
+        speed: Math.random()*1+0.5,
+        swing: Math.random()*1+0.5,
+        angle: Math.random()*Math.PI*2
+      });
+    }
+
+    function animate(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      for(const f of flakes){
+        f.y += f.speed;
+        f.x += Math.sin(f.angle)*f.swing;
+        f.angle += 0.01;
+        if(f.y > canvas.height) {
+          f.y = -10;
+          f.x = Math.random()*canvas.width;
+        }
+        ctx.beginPath();
+        ctx.arc(f.x,f.y,f.r,0,Math.PI*2);
+        ctx.fillStyle = "white";
+        ctx.fill();
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    window.addEventListener('resize',()=>{
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
