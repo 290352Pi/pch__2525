@@ -2,12 +2,88 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ช่องทางการติดตาม</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ช่องทางการติดตาม - @pch__2525</title>
+  <meta name="description" content="ติดตามและสอยอินสตาแกรม TikTok และ X ของ @pch__2525">
+  <meta name="keywords" content="pch__2525, social media, Instagram, TikTok, Twitter, X">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="ช่องทางการติดตาม - @pch__2525">
+  <meta property="og:description" content="กำลังมองหาเพื่อนใหม่หรอคุณ เข้ามาแล้วอย่าลืมทักทายกันนะ!">
+  <meta property="og:image" content="./profile.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'bounce-slow': 'bounce 2s infinite',
+            'pulse-slow': 'pulse 3s infinite',
+            'float': 'float 3s ease-in-out infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+            'shimmer': 'shimmer 2.5s infinite',
+            'rotate-slow': 'rotate-slow 8s linear infinite',
+            'wave': 'wave 2s ease-in-out infinite',
+            'gradient-x': 'gradient-x 3s ease infinite',
+            'fade-in-up': 'fade-in-up 1s ease-out forwards',
+            'spin-slow': 'spin-slow 4s linear infinite'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-15px)' }
+            },
+            glow: {
+              '0%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(147, 51, 234, 0.3)' },
+              '100%': { boxShadow: '0 0 40px rgba(59, 130, 246, 0.8), 0 0 60px rgba(147, 51, 234, 0.5)' }
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' }
+            },
+            'rotate-slow': {
+              '0%': { transform: 'rotate(0deg)' },
+              '100%': { transform: 'rotate(360deg)' }
+            },
+            wave: {
+              '0%, 100%': { transform: 'rotate(0deg) scale(1)' },
+              '25%': { transform: 'rotate(5deg) scale(1.05)' },
+              '75%': { transform: 'rotate(-5deg) scale(0.95)' }
+            },
+            'gradient-x': {
+              '0%, 100%': { backgroundPosition: '0% 50%' },
+              '50%': { backgroundPosition: '100% 50%' }
+            },
+            'fade-in-up': {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            },
+            'spin-slow': {
+              '0%': { transform: 'rotate(0deg)' },
+              '100%': { transform: 'rotate(360deg)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
+    * {
+      font-family: 'Kanit', 'Sarabun', sans-serif;
+    }
+
     /* วิดีโอพื้นหลัง */
     #bg-video {
       position: fixed;
@@ -16,107 +92,562 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      z-index: -2;
+      filter: brightness(0.6) blur(2px) saturate(1.2);
+      transition: filter 0.5s ease;
+    }
+
+    /* Animated background overlay */
+    .bg-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2), rgba(236, 72, 153, 0.1), rgba(16, 185, 129, 0.1));
+      background-size: 400% 400%;
+      animation: gradient-x 8s ease infinite;
       z-index: -1;
     }
 
-    /* เอฟเฟกต์ไอคอนขยับ */
-    .social-btn i {
-      transition: transform 0.3s ease;
-    }
-    .social-btn:hover i {
-      transform: scale(1.2) rotate(5deg);
+    /* Floating orbs */
+    .floating-orb {
+      position: fixed;
+      border-radius: 50%;
+      background: linear-gradient(45deg, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.3));
+      filter: blur(2px);
+      pointer-events: none;
+      z-index: 1;
+      animation: float 6s ease-in-out infinite;
     }
 
-    /* Slider สไตล์ทันสมัย สีไล่โทน */
+    .orb-1 { width: 60px; height: 60px; top: 20%; left: 10%; animation-delay: 0s; }
+    .orb-2 { width: 80px; height: 80px; top: 60%; right: 15%; animation-delay: 2s; }
+    .orb-3 { width: 40px; height: 40px; bottom: 20%; left: 20%; animation-delay: 4s; }
+    .orb-4 { width: 70px; height: 70px; top: 30%; right: 30%; animation-delay: 1s; }
+
+    /* การ์ดโปรไฟล์ */
+    .profile-card {
+      backdrop-filter: blur(25px) saturate(180%);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      box-shadow:
+        0 32px 64px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        0 0 100px rgba(59, 130, 246, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      animation: shimmer 3s infinite;
+    }
+
+    /* รูปโปรไฟล์ */
+    .profile-image-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .profile-image {
+      border: 5px solid rgba(255, 255, 255, 0.9);
+      box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(59, 130, 246, 0.3);
+      filter: brightness(1.1) saturate(1.3) contrast(1.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-ring {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border: 3px solid transparent;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899, #10b981);
+      background-size: 300% 300%;
+      animation: gradient-x 4s ease infinite, rotate-slow 8s linear infinite;
+      z-index: 1;
+    }
+
+    /* ปุ่มโซเชียล */
+    .social-btn {
+      backdrop-filter: blur(15px) saturate(180%);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      background-size: 200% 200%;
+    }
+
+    .social-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.6s ease;
+      z-index: 1;
+    }
+
+    .social-btn::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+      transition: all 0.5s ease;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    .social-btn:hover::before {
+      left: 100%;
+    }
+
+    .social-btn:hover::after {
+      width: 300px;
+      height: 300px;
+    }
+
+    .social-btn:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .social-btn:active {
+      transform: translateY(-2px) scale(1.01);
+    }
+
+    /* Instagram gradient */
+    .social-btn.instagram {
+      background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+      background-size: 400% 400%;
+      animation: gradient-x 6s ease infinite;
+    }
+
+    /* TikTok gradient */
+    .social-btn.tiktok {
+      background: linear-gradient(45deg, #000000, #ff0050, #00f2ea, #000000);
+      background-size: 400% 400%;
+      animation: gradient-x 6s ease infinite;
+    }
+
+    /* X (Twitter) gradient */
+    .social-btn.twitter {
+      background: linear-gradient(45deg, #1da1f2, #0d8bd9, #0a7ec8, #000000);
+      background-size: 400% 400%;
+      animation: gradient-x 6s ease infinite;
+    }
+
+    /* เอฟเฟกต์ไอคอน */
+    .social-btn i {
+      transition: all 0.4s ease;
+      filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
+      position: relative;
+      z-index: 2;
+    }
+
+    .social-btn:hover i {
+      transform: scale(1.3) rotate(10deg);
+      filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+    }
+
+    .social-btn span {
+      position: relative;
+      z-index: 2;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* ตัวควบคุมเสียง */
+    .volume-control {
+      backdrop-filter: blur(20px) saturate(180%);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      transition: all 0.4s ease;
+    }
+
+    .volume-control:hover {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.25));
+      transform: scale(1.05) translateY(-2px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Enhanced Slider */
     input[type=range] {
       -webkit-appearance: none;
       width: 120px;
-      height: 6px;
-      border-radius: 3px;
-      background: linear-gradient(to right, #ffffff, #ffffff, #ffffff); /* gradient สีตามธีม */
+      height: 8px;
+      border-radius: 4px;
+      background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899, #10b981);
       outline: none;
+      transition: all 0.3s ease;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
     }
+
+    input[type=range]:hover {
+      transform: scaleY(1.5);
+      box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(59, 130, 246, 0.5);
+    }
+
     input[type=range]::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: 18px;
-      height: 18px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
-      background: #ffffff;
-      border: 2px solid #3b82f6;
+      background: linear-gradient(45deg, #ffffff, #f1f5f9, #e2e8f0);
+      border: 3px solid #3b82f6;
       cursor: pointer;
-      transition: transform 0.2s, background 0.2s, border-color 0.2s;
-    }
-    input[type=range]:hover::-webkit-slider-thumb {
-      transform: scale(1.3);
-      border-color: #ffffff;
-      background: #ffffff;
-    }
-    input[type=range]::-moz-range-thumb {
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: #ffffff;
-      border: 2px solid #3b82f6;
-      cursor: pointer;
-      transition: transform 0.2s, background 0.2s, border-color 0.2s;
+      box-shadow:
+        0 6px 12px rgba(0, 0, 0, 0.3),
+        0 0 0 2px rgba(59, 130, 246, 0.2);
+      transition: all 0.3s ease;
     }
 
+    input[type=range]:hover::-webkit-slider-thumb {
+      transform: scale(1.4);
+      box-shadow:
+        0 8px 16px rgba(59, 130, 246, 0.4),
+        0 0 0 4px rgba(59, 130, 246, 0.3);
+      background: linear-gradient(45deg, #ffffff, #ddd6fe);
+    }
+
+    /* หิมะตก */
+    #snow-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 15;
+    }
+
+    /* Enhanced text effects */
+    .text-gradient {
+      background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899, #10b981);
+      background-size: 300% 300%;
+      animation: gradient-x 4s ease infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+    }
+
+    .text-glow {
+      text-shadow:
+        0 0 10px rgba(59, 130, 246, 0.5),
+        0 0 20px rgba(147, 51, 234, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .description-text {
+      text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.6),
+        0 0 15px rgba(59, 130, 246, 0.3);
+      background: linear-gradient(45deg, rgba(255, 255, 255, 0.95), rgba(240, 245, 255, 0.9));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Loading animation */
+    .loading-spinner {
+      background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+      animation: spin 1s linear infinite;
+    }
+
+    /* Star field effect */
+    .star {
+      position: fixed;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s infinite;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 8px;
+      }
+
+      .profile-card {
+        max-width: 95%;
+        padding: 24px 18px;
+        margin: 0 auto;
+      }
+
+      .profile-image {
+        width: 120px;
+        height: 120px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .social-btn {
+        padding: 14px 18px;
+        font-size: 16px;
+        touch-action: manipulation;
+      }
+
+      .volume-control {
+        top: 10px;
+        left: 10px;
+        padding: 10px 14px;
+        font-size: 14px;
+      }
+
+      input[type=range] {
+        width: 100px;
+      }
+
+      .floating-orb {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .profile-card {
+        padding: 20px 16px;
+      }
+
+      .profile-image {
+        width: 110px;
+        height: 110px;
+      }
+
+      h1 {
+        font-size: 1.3rem;
+      }
+
+      p {
+        font-size: 15px;
+      }
+
+      .social-btn {
+        padding: 12px 16px;
+        font-size: 15px;
+      }
+    }
+
+    /* Animation delays */
+    .animate-delay-1 { animation-delay: 0.2s; }
+    .animate-delay-2 { animation-delay: 0.4s; }
+    .animate-delay-3 { animation-delay: 0.6s; }
+    .animate-delay-4 { animation-delay: 0.8s; }
+
+    /* Preloader */
+    .preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1e293b, #0f172a, #1e1b4b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.8s ease;
+    }
+
+    .preloader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .preloader-content {
+      text-align: center;
+      animation: fade-in-up 1s ease-out;
+    }
+
+    .loading-ring {
+      width: 60px;
+      height: 60px;
+      border: 6px solid rgba(59, 130, 246, 0.2);
+      border-top: 6px solid #3b82f6;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
   </style>
 </head>
 <body class="min-h-screen flex items-center justify-center overflow-hidden">
 
-  <!-- เพลงพื้นหลัง autoplay muted ก่อน -->
-  <audio id="bg-music" src="music.mp3" autoplay loop muted></audio>
+  <!-- Preloader -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <div class="loading-ring"></div>
+      <p class="text-white text-xl font-medium mb-2">กำลังโหลด...</p>
+      <p class="text-blue-300 text-sm">เตรียมความพร้อม ✨</p>
+    </div>
+  </div>
+
+  <!-- เพลงพื้นหลัง -->
+  <audio id="bg-music" preload="auto" loop>
+    <source src="music.mp3" type="audio/mpeg">
+    เบราว์เซอร์ไม่รองรับการเล่นเสียง
+  </audio>
+
+  <!-- Floating orbs -->
+  <div class="floating-orb orb-1"></div>
+  <div class="floating-orb orb-2"></div>
+  <div class="floating-orb orb-3"></div>
+  <div class="floating-orb orb-4"></div>
+
+  <!-- Background overlay -->
+  <div class="bg-overlay"></div>
 
   <!-- ตัวควบคุมเสียงมุมซ้ายบน -->
-  <div class="fixed top-4 left-4 flex items-center gap-2 bg-white/70 px-3 py-2 rounded-full shadow-lg z-50">
-    <button id="mute-btn" class="text-black text-lg"><i class="fas fa-volume-up"></i></button>
-    <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="1">
+  <div class="volume-control fixed top-4 left-4 flex items-center gap-4 px-5 py-3 rounded-full shadow-2xl z-50">
+    <button id="mute-btn" class="text-white text-lg transition-all duration-300 hover:scale-125 hover:text-blue-300">
+      <i class="fas fa-volume-up"></i>
+    </button>
+    <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="0.7">
   </div>
 
   <!-- วิดีโอพื้นหลัง -->
-  <video autoplay muted loop id="bg-video">
+  <video autoplay muted loop id="bg-video" playsinline>
     <source src="bg.mp4" type="video/mp4">
-    Your browser does not support the video tag.
+    เบราว์เซอร์ไม่รองรับการเล่นวิดีโอ
   </video>
 
   <!-- การ์ดโปรไฟล์ -->
-  <div class="bg-white/80 backdrop-blur-md rounded-2xl shadow-2xl p-10 max-w-md text-center transform hover:scale-[1.01] transition-transform duration-300 relative z-10">
-    
+  <div class="profile-card rounded-3xl p-10 max-w-md text-center transform transition-all duration-700 relative z-20 animate-float opacity-0 animate-fade-in-up">
+
     <!-- โปรไฟล์ -->
-    <div class="relative w-32 h-32 mx-auto">
-      <img src="profile.jpg" alt="Profile"
-           class="w-32 h-32 rounded-full shadow-xl ring-4 ring-cyan-300 object-cover transition-transform duration-500 hover:scale-105">
+    <div class="profile-image-container relative w-36 h-36 mx-auto mb-8 animate-delay-1 opacity-0 animate-fade-in-up">
+      <div class="profile-ring"></div>
+      <img src="profile.jpg" alt="Profile Picture @pch__2525"
+           class="profile-image w-36 h-36 rounded-full object-cover transition-all duration-500 hover:scale-110 animate-pulse-slow"
+           loading="eager">
+      <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-400 via-purple-500 to-pink-500 opacity-20 animate-glow"></div>
     </div>
 
-    <h1 class="text-2xl font-bold mt-4">@pch__2525</h1>
-    <p class="text-gray-600">กำลังมองหาเพื่อนใหม่หรอคุณ เข้ามาแล้วอย่าลืมทักทายกันนะ!</p>
+    <!-- ชื่อและคำอธิบาย -->
+    <h1 class="text-3xl font-bold mb-4 text-gradient text-glow animate-delay-2 opacity-0 animate-fade-in-up animate-wave">
+      @pch__2525
+    </h1>
+    <p class="description-text mb-8 leading-relaxed font-medium text-lg animate-delay-3 opacity-0 animate-fade-in-up">
+      กำลังมองหาเพื่อนใหม่หรอคุณ 🌟<br>
+      เข้ามาแล้วอย่าลืมทักทายกันนะ! 💫
+    </p>
 
     <!-- ปุ่มช่องทางติดตาม -->
-    <div class="mt-6 space-y-4">
-      <a href="https://instagram.com/pch__2525" target="_blank"
-         class="social-btn flex items-center justify-center gap-3 w-full bg-gradient-to-r from-pink-500 to-yellow-500 text-white py-3 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
-         <i class="fab fa-instagram text-lg"></i> Instagram
+    <div class="space-y-5 animate-delay-4 opacity-0 animate-fade-in-up">
+      <a href="https://instagram.com/pch__2525" target="_blank" rel="noopener noreferrer"
+         class="social-btn instagram flex items-center justify-center gap-4 w-full text-white py-4 px-6 rounded-2xl shadow-2xl font-medium text-lg"
+         aria-label="ติดตาม Instagram">
+         <i class="fab fa-instagram text-2xl"></i>
+         <span>Instagram</span>
       </a>
-      <a href="https://www.tiktok.com/@pch_400" target="_blank"
-         class="social-btn flex items-center justify-center gap-3 w-full bg-black text-white py-3 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
-         <i class="fab fa-tiktok text-lg"></i> TikTok
+
+      <a href="https://www.tiktok.com/@pch_400" target="_blank" rel="noopener noreferrer"
+         class="social-btn tiktok flex items-center justify-center gap-4 w-full text-white py-4 px-6 rounded-2xl shadow-2xl font-medium text-lg"
+         aria-label="ติดตาม TikTok">
+         <i class="fab fa-tiktok text-2xl"></i>
+         <span>TikTok</span>
       </a>
-      <a href="https://x.com/pozzzzzz57" target="_blank"
-         class="social-btn flex items-center justify-center gap-3 w-full bg-gradient-to-r from-sky-500 to-black text-white py-3 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
-         <i class="fab fa-x-twitter text-lg"></i> Twitter / X
+
+      <a href="https://x.com/pozzzzzz57" target="_blank" rel="noopener noreferrer"
+         class="social-btn twitter flex items-center justify-center gap-4 w-full text-white py-4 px-6 rounded-2xl shadow-2xl font-medium text-lg"
+         aria-label="ติดตาม X (Twitter)">
+         <i class="fab fa-x-twitter text-2xl"></i>
+         <span>X (Twitter)</span>
       </a>
     </div>
 
     <!-- footer -->
-    <p class="text-xs text-gray-500 mt-6">© 2025 สร้างด้วยความรัก ❤️</p>
+    <p class="text-sm text-gray-200 mt-8 opacity-90 animate-bounce-slow font-medium">
+      © 2025 สร้างด้วยความรัก ❤️ และเทคโนโลยี ⚡
+    </p>
   </div>
 
-  <!-- canvas หิมะตก -->
-  <canvas id="snow-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:20;"></canvas>
+  <!-- Canvas หิมะตก -->
+  <canvas id="snow-canvas"></canvas>
 
   <script>
+    // ===============================
+    // Preloader
+    // ===============================
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('preloader').classList.add('hidden');
+
+        // เล่นเพลงอัตโนมัติทันทีหลัง preloader หายไป
+        setTimeout(() => {
+          music.muted = false;
+          music.play().catch(e => {
+            console.log('ไม่สามารถเล่นเพลงอัตโนมัติได้:', e);
+            // ถ้าเล่นไม่ได้ จะรอให้ผู้ใช้ interact ครั้งแรก
+          });
+        }, 100);
+
+        // แสดงการ์ดโปรไฟล์หลังจาก preloader หายไป
+        setTimeout(() => {
+          document.querySelector('.profile-card').style.opacity = '1';
+          // แสดงองค์ประกอบต่างๆ ทีละตัว
+          document.querySelectorAll('.opacity-0').forEach((el, index) => {
+            setTimeout(() => {
+              el.style.opacity = '1';
+            }, index * 200);
+          });
+        }, 300);
+      }, 1200);
+    });
+
+    // ===============================
+    // Star field effect
+    // ===============================
+    function createStars() {
+      const starCount = window.innerWidth < 768 ? 15 : 30;
+      for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.width = star.style.height = (Math.random() * 3 + 1) + 'px';
+        star.style.animationDelay = Math.random() * 3 + 's';
+        document.body.appendChild(star);
+      }
+    }
+    createStars();
+
     // ===============================
     // เพลง + ควบคุมเสียง
     // ===============================
@@ -124,24 +655,36 @@
     const muteBtn = document.getElementById('mute-btn');
     const volumeSlider = document.getElementById('volume-slider');
 
-    // ปลด mute อัตโนมัติเมื่อผู้ใช้ interact ครั้งแรก
-    document.addEventListener('click', () => {
-      if(music.muted){
+    // ตั้งค่าเริ่มต้น
+    music.volume = 0.7;
+
+    // สำรองกรณีเพลงไม่เล่นอัตโนมัติ (บางเบราว์เซอร์อาจบล็อก)
+    const handleBackupInteraction = () => {
+      if (music.paused) {
         music.muted = false;
-        music.play();
+        music.play().catch(e => console.log('ไม่สามารถเล่นเพลงได้:', e));
       }
-    }, {once:true});
+    };
+
+    document.addEventListener('click', handleBackupInteraction, {once: true});
+    document.addEventListener('touchstart', handleBackupInteraction, {once: true});
 
     // Mute/Unmute
-    muteBtn.addEventListener('click', ()=>{
+    muteBtn.addEventListener('click', () => {
       music.muted = !music.muted;
-      muteBtn.innerHTML = music.muted ? '<i class="fas fa-volume-mute"></i>' : '<i class="fas fa-volume-up"></i>';
+      muteBtn.innerHTML = music.muted ?
+        '<i class="fas fa-volume-mute"></i>' :
+        '<i class="fas fa-volume-up"></i>';
+
+      // เอฟเฟกต์ animation
+      muteBtn.style.transform = 'scale(0.8)';
+      setTimeout(() => muteBtn.style.transform = 'scale(1)', 150);
     });
 
     // ปรับระดับเสียง
-    volumeSlider.addEventListener('input', ()=>{
+    volumeSlider.addEventListener('input', () => {
       music.volume = volumeSlider.value;
-      if(music.volume === 0){
+      if (music.volume === 0) {
         music.muted = true;
         muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
       } else {
@@ -151,50 +694,201 @@
     });
 
     // ===============================
-    // Canvas หิมะตก
+    // Canvas หิมะตก (ปรับปรุง)
     // ===============================
     const canvas = document.getElementById('snow-canvas');
     const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
 
-    const snowCount = 50;
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    resizeCanvas();
+
+    const snowCount = window.innerWidth < 768 ? 40 : 80;
     const flakes = [];
 
-    for(let i=0;i<snowCount;i++){
+    // สร้างหิมะ
+    for (let i = 0; i < snowCount; i++) {
       flakes.push({
-        x: Math.random()*canvas.width,
-        y: Math.random()*canvas.height,
-        r: Math.random()*4+2,
-        speed: Math.random()*1+0.5,
-        swing: Math.random()*1+0.5,
-        angle: Math.random()*Math.PI*2
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 4 + 1,
+        speed: Math.random() * 2 + 0.5,
+        swing: Math.random() * 2 + 0.5,
+        angle: Math.random() * Math.PI * 2,
+        opacity: Math.random() * 0.8 + 0.3,
+        sparkle: Math.random() > 0.7
       });
     }
 
-    function animate(){
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-      for(const f of flakes){
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (const f of flakes) {
         f.y += f.speed;
-        f.x += Math.sin(f.angle)*f.swing;
+        f.x += Math.sin(f.angle) * f.swing;
         f.angle += 0.01;
-        if(f.y > canvas.height) {
+
+        // Reset ตำแหน่งเมื่อหิมะตกลงล่าง
+        if (f.y > canvas.height + 10) {
           f.y = -10;
-          f.x = Math.random()*canvas.width;
+          f.x = Math.random() * canvas.width;
         }
+
+        // Reset ตำแหน่งเมื่อหิมะออกจากขอบ
+        if (f.x > canvas.width + 10) f.x = -10;
+        if (f.x < -10) f.x = canvas.width + 10;
+
+        // วาดหิมะ
+        ctx.globalAlpha = f.opacity;
         ctx.beginPath();
-        ctx.arc(f.x,f.y,f.r,0,Math.PI*2);
-        ctx.fillStyle = "white";
+        ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+
+        if (f.sparkle) {
+          // หิมะเป็นประกาย
+          const gradient = ctx.createRadialGradient(f.x, f.y, 0, f.x, f.y, f.r);
+          gradient.addColorStop(0, "rgba(255, 255, 255, 1)");
+          gradient.addColorStop(0.5, "rgba(200, 220, 255, 0.8)");
+          gradient.addColorStop(1, "rgba(100, 150, 255, 0.3)");
+          ctx.fillStyle = gradient;
+        } else {
+          ctx.fillStyle = "white";
+        }
+
         ctx.fill();
+
+        // เพิ่ม glow effect
+        ctx.shadowColor = "rgba(255, 255, 255, 0.5)";
+        ctx.shadowBlur = f.r * 2;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        ctx.globalAlpha = 1;
       }
+
       requestAnimationFrame(animate);
     }
     animate();
 
-    window.addEventListener('resize',()=>{
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+    // Event listeners
+    window.addEventListener('resize', () => {
+      setTimeout(resizeCanvas, 100);
     });
+
+    window.addEventListener('orientationchange', () => {
+      setTimeout(resizeCanvas, 200);
+    });
+
+    // ===============================
+    // Enhanced social button interactions
+    // ===============================
+    document.querySelectorAll('.social-btn').forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        btn.style.filter = 'brightness(1.1) saturate(1.2)';
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        btn.style.filter = 'brightness(1) saturate(1)';
+      });
+
+      btn.addEventListener('click', (e) => {
+        // Ripple effect
+        const rect = btn.getBoundingClientRect();
+        const ripple = document.createElement('span');
+        const size = Math.max(rect.width, rect.height);
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+        ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+        ripple.style.position = 'absolute';
+        ripple.style.borderRadius = '50%';
+        ripple.style.background = 'rgba(255, 255, 255, 0.3)';
+        ripple.style.transform = 'scale(0)';
+        ripple.style.animation = 'ripple 0.6s ease-out';
+        ripple.style.pointerEvents = 'none';
+
+        btn.appendChild(ripple);
+
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+
+        const platform = e.currentTarget.textContent.trim();
+        console.log(`คลิก: ${platform}`);
+      });
+    });
+
+    // Add ripple animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes ripple {
+        from {
+          transform: scale(0);
+          opacity: 1;
+        }
+        to {
+          transform: scale(1);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // ===============================
+    // Error handling
+    // ===============================
+
+    // Handle music loading errors
+    music.addEventListener('error', () => {
+      console.log('ไม่สามารถโหลดไฟล์เพลงได้');
+      document.querySelector('.volume-control').style.display = 'none';
+    });
+
+    // Handle video loading errors
+    const video = document.getElementById('bg-video');
+    video.addEventListener('error', () => {
+      console.log('ไม่สามารถโหลดไฟล์วิดีโอได้');
+      document.body.style.background = 'linear-gradient(135deg, #1e293b, #0f172a, #1e1b4b)';
+    });
+
+    // ===============================
+    // Performance optimization
+    // ===============================
+
+    // Reduce animations on low-end devices
+    if (navigator.hardwareConcurrency < 4) {
+      document.querySelectorAll('.floating-orb').forEach(orb => {
+        orb.style.display = 'none';
+      });
+    }
+
+    // Pause animations when page is not visible
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        document.querySelectorAll('*').forEach(el => {
+          el.style.animationPlayState = 'paused';
+        });
+      } else {
+        document.querySelectorAll('*').forEach(el => {
+          el.style.animationPlayState = 'running';
+        });
+      }
+    });
+  </script>
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "@pch__2525",
+    "description": "กำลังมองหาเพื่อนใหม่หรอคุณ เข้ามาแล้วอย่าลืมทักทายกันนะ!",
+    "sameAs": [
+      "https://instagram.com/pch__2525",
+      "https://www.tiktok.com/@pch_400",
+      "https://x.com/pozzzzzz57"
+    ]
+  }
   </script>
 </body>
 </html>
