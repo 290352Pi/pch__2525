@@ -1,888 +1,847 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>ช่องทางการติดตาม - @pch__2525</title>
-  <meta name="description" content="ติดตามและสอยอินสตาแกรม TikTok และ X ของ @pch__2525">
-  <meta name="keywords" content="pch__2525, social media, Instagram, TikTok, Twitter, X">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ช่องทางติดตาม - @pch__2525</title>
+  <meta name="description" content="ติดตาม @pch__2525 ผ่าน Instagram, TikTok และ X">
+  <meta name="keywords" content="pch__2525, social media, Instagram, TikTok, X">
 
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="ช่องทางการติดตาม - @pch__2525">
-  <meta property="og:description" content="กำลังมองหาเพื่อนใหม่หรอคุณ เข้ามาแล้วอย่าลืมทักทายกันนะ!">
+  <meta property="og:title" content="ช่องทางติดตาม - @pch__2525">
+  <meta property="og:description" content="เข้ามาแล้วทักกันได้นะ ติดตามได้ทุกช่องทางที่นี่">
   <meta property="og:image" content="./profile.jpg">
   <meta property="og:type" content="website">
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          animation: {
-            'bounce-slow': 'bounce 2s infinite',
-            'pulse-slow': 'pulse 3s infinite',
-            'float': 'float 3s ease-in-out infinite',
-            'glow': 'glow 2s ease-in-out infinite alternate',
-            'shimmer': 'shimmer 2.5s infinite',
-            'rotate-slow': 'rotate-slow 8s linear infinite',
-            'wave': 'wave 2s ease-in-out infinite',
-            'gradient-x': 'gradient-x 3s ease infinite',
-            'fade-in-up': 'fade-in-up 1s ease-out forwards',
-            'spin-slow': 'spin-slow 4s linear infinite'
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-15px)' }
-            },
-            glow: {
-              '0%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(147, 51, 234, 0.3)' },
-              '100%': { boxShadow: '0 0 40px rgba(59, 130, 246, 0.8), 0 0 60px rgba(147, 51, 234, 0.5)' }
-            },
-            shimmer: {
-              '0%': { backgroundPosition: '-200% 0' },
-              '100%': { backgroundPosition: '200% 0' }
-            },
-            'rotate-slow': {
-              '0%': { transform: 'rotate(0deg)' },
-              '100%': { transform: 'rotate(360deg)' }
-            },
-            wave: {
-              '0%, 100%': { transform: 'rotate(0deg) scale(1)' },
-              '25%': { transform: 'rotate(5deg) scale(1.05)' },
-              '75%': { transform: 'rotate(-5deg) scale(0.95)' }
-            },
-            'gradient-x': {
-              '0%, 100%': { backgroundPosition: '0% 50%' },
-              '50%': { backgroundPosition: '100% 50%' }
-            },
-            'fade-in-up': {
-              '0%': { opacity: '0', transform: 'translateY(30px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' }
-            },
-            'spin-slow': {
-              '0%': { transform: 'rotate(0deg)' },
-              '100%': { transform: 'rotate(360deg)' }
-            }
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    * {
-      font-family: 'Kanit', 'Sarabun', sans-serif;
+    :root {
+      --bg-0: #050d14;
+      --bg-1: #0b1b28;
+      --bg-2: #143a4e;
+      --text: #edf4fb;
+      --text-soft: #b4c9da;
+      --card: rgba(7, 18, 27, 0.62);
+      --card-border: rgba(156, 196, 220, 0.28);
+      --accent: #32c5a8;
+      --accent-strong: #11b690;
+      --shadow: 0 24px 70px rgba(1, 8, 14, 0.65);
+      --radius-xl: 30px;
+      --radius-lg: 18px;
     }
 
-    /* วิดีโอพื้นหลัง */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: "Noto Sans Thai", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 20%, #1b4b66 0%, transparent 35%),
+        radial-gradient(circle at 80% 5%, #2b5460 0%, transparent 30%),
+        linear-gradient(140deg, var(--bg-0), var(--bg-1) 55%, var(--bg-2));
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      padding: 28px 16px 24px;
+      overflow: hidden;
+      position: relative;
+      isolation: isolate;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(70% 55% at 25% 15%, rgba(35, 167, 190, 0.28), transparent 70%),
+        radial-gradient(55% 45% at 85% 85%, rgba(20, 149, 123, 0.2), transparent 75%);
+      z-index: -2;
+    }
+
     #bg-video {
       position: fixed;
-      top: 0;
-      left: 0;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: -2;
-      filter: brightness(0.6) blur(2px) saturate(1.2);
-      transition: filter 0.5s ease;
+      z-index: -3;
+      filter: brightness(0.42) saturate(1.08) contrast(1.08);
+      transform: scale(1.02);
     }
 
-    /* Animated background overlay */
-    .bg-overlay {
+    body.video-fallback #bg-video {
+      display: none;
+    }
+
+    .scene-overlay {
       position: fixed;
-      top: 0;
-      left: 0;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background:
+        linear-gradient(150deg, rgba(2, 15, 23, 0.84), rgba(8, 31, 46, 0.58) 45%, rgba(16, 53, 71, 0.42));
+    }
+
+    .scene-grid {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.22;
+      background-image:
+        linear-gradient(rgba(158, 202, 230, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(158, 202, 230, 0.1) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(circle at center, black, transparent 80%);
+      animation: grid-shift 18s linear infinite;
+    }
+
+    .audio-panel {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(171, 214, 237, 0.38);
+      background: rgba(2, 13, 21, 0.58);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 30px rgba(0, 5, 10, 0.5);
+      transition: opacity 260ms ease, visibility 260ms ease;
+    }
+
+    .audio-toggle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 0;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      color: #06212f;
+      background: linear-gradient(140deg, #d4f7ff, #9bd9e6);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+      box-shadow: 0 6px 16px rgba(11, 112, 133, 0.45);
+    }
+
+    .audio-toggle:hover {
+      transform: translateY(-1px) scale(1.03);
+      box-shadow: 0 10px 18px rgba(11, 112, 133, 0.55);
+    }
+
+    .audio-range {
+      width: 118px;
+      height: 4px;
+      margin: 0;
+      accent-color: var(--accent);
+      cursor: pointer;
+      opacity: 0.9;
+    }
+
+    .landing-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      display: grid;
+      place-items: center;
+      padding: 24px 16px;
+      transition: opacity 320ms ease, visibility 320ms ease;
+    }
+
+    .landing-card {
+      width: min(100%, 640px);
+      border-radius: 28px;
+      border: 1px solid rgba(188, 231, 250, 0.34);
+      background: linear-gradient(145deg, rgba(8, 29, 41, 0.84), rgba(10, 41, 56, 0.68));
+      box-shadow: 0 26px 80px rgba(2, 10, 16, 0.62);
+      backdrop-filter: blur(12px);
+      text-align: center;
+      padding: clamp(24px, 5vw, 42px);
+    }
+
+    .landing-eyebrow {
+      margin: 0;
+      font: 600 0.78rem/1 "Sora", sans-serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #a4d9ea;
+    }
+
+    .landing-card h2 {
+      margin: 14px 0 10px;
+      font-family: "Sora", "Noto Sans Thai", sans-serif;
+      font-size: clamp(1.7rem, 5vw, 2.45rem);
+      line-height: 1.2;
+    }
+
+    .landing-card p {
+      margin: 0;
+      color: #b8cedf;
+      line-height: 1.7;
+      font-size: clamp(0.98rem, 2.8vw, 1.08rem);
+    }
+
+    .enter-site {
+      margin-top: 24px;
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #6fe7ff, #39c5a9);
+      color: #03212b;
+      font-family: "Sora", "Noto Sans Thai", sans-serif;
+      font-size: 0.98rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      padding: 12px 24px;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(35, 170, 188, 0.4);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .enter-site:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px rgba(35, 170, 188, 0.48);
+    }
+
+    .enter-site:focus-visible {
+      outline: 2px solid #bff5ff;
+      outline-offset: 3px;
+    }
+
+    .profile-shell {
+      width: min(100%, 540px);
+      position: relative;
+      z-index: 2;
+      transition: opacity 300ms ease, transform 300ms ease, visibility 300ms ease;
+    }
+
+    body.show-landing .profile-shell,
+    body.show-landing .audio-panel {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    body.show-landing .profile-shell {
+      transform: translateY(14px);
+    }
+
+    body:not(.show-landing) .landing-screen {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .profile-card {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--card-border);
+      background: var(--card);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+      padding: clamp(22px, 4vw, 36px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(125deg, rgba(197, 242, 255, 0.55), rgba(27, 143, 123, 0.2), transparent 58%);
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      font: 600 0.76rem/1 "Sora", sans-serif;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #9bc8e2;
+    }
+
+    .avatar-wrap {
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      padding: 4px;
+      background: linear-gradient(145deg, #cbf6ff, #33c8ab, #0b5f74);
+      box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.45),
+        0 0 0 8px rgba(35, 165, 187, 0.14);
+      position: relative;
+      isolation: isolate;
+    }
+
+    .avatar-wrap img {
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2), rgba(236, 72, 153, 0.1), rgba(16, 185, 129, 0.1));
-      background-size: 400% 400%;
-      animation: gradient-x 8s ease infinite;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      filter: contrast(1.06) saturate(1.08);
+    }
+
+    .avatar-wrap::after {
+      content: "";
+      position: absolute;
+      inset: -9px;
+      border-radius: 50%;
+      border: 1px solid rgba(147, 228, 214, 0.5);
+      opacity: 0.55;
+      animation: ring-pulse 3.2s ease-in-out infinite;
       z-index: -1;
     }
 
-    /* Floating orbs */
-    .floating-orb {
-      position: fixed;
-      border-radius: 50%;
-      background: linear-gradient(45deg, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.3));
-      filter: blur(2px);
-      pointer-events: none;
-      z-index: 1;
-      animation: float 6s ease-in-out infinite;
-    }
-
-    .orb-1 { width: 60px; height: 60px; top: 20%; left: 10%; animation-delay: 0s; }
-    .orb-2 { width: 80px; height: 80px; top: 60%; right: 15%; animation-delay: 2s; }
-    .orb-3 { width: 40px; height: 40px; bottom: 20%; left: 20%; animation-delay: 4s; }
-    .orb-4 { width: 70px; height: 70px; top: 30%; right: 30%; animation-delay: 1s; }
-
-    /* การ์ดโปรไฟล์ */
-    .profile-card {
-      backdrop-filter: blur(25px) saturate(180%);
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      box-shadow:
-        0 32px 64px rgba(0, 0, 0, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2),
-        0 0 100px rgba(59, 130, 246, 0.1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .profile-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-      animation: shimmer 3s infinite;
-    }
-
-    /* รูปโปรไฟล์ */
-    .profile-image-container {
-      position: relative;
-      display: inline-block;
-    }
-
-    .profile-image {
-      border: 5px solid rgba(255, 255, 255, 0.9);
-      box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.4),
-        0 0 30px rgba(59, 130, 246, 0.3);
-      filter: brightness(1.1) saturate(1.3) contrast(1.1);
-      position: relative;
-      z-index: 2;
-    }
-
-    .profile-ring {
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      right: -10px;
-      bottom: -10px;
-      border: 3px solid transparent;
-      border-radius: 50%;
-      background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899, #10b981);
-      background-size: 300% 300%;
-      animation: gradient-x 4s ease infinite, rotate-slow 8s linear infinite;
-      z-index: 1;
-    }
-
-    /* ปุ่มโซเชียล */
-    .social-btn {
-      backdrop-filter: blur(15px) saturate(180%);
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      background-size: 200% 200%;
-    }
-
-    .social-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      transition: left 0.6s ease;
-      z-index: 1;
-    }
-
-    .social-btn::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
-      transition: all 0.5s ease;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 0;
-    }
-
-    .social-btn:hover::before {
-      left: 100%;
-    }
-
-    .social-btn:hover::after {
-      width: 300px;
-      height: 300px;
-    }
-
-    .social-btn:hover {
-      transform: translateY(-5px) scale(1.03);
-      box-shadow:
-        0 25px 50px rgba(0, 0, 0, 0.3),
-        0 0 30px rgba(255, 255, 255, 0.2);
-      border-color: rgba(255, 255, 255, 0.5);
-    }
-
-    .social-btn:active {
-      transform: translateY(-2px) scale(1.01);
-    }
-
-    /* Instagram gradient */
-    .social-btn.instagram {
-      background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-      background-size: 400% 400%;
-      animation: gradient-x 6s ease infinite;
-    }
-
-    /* TikTok gradient */
-    .social-btn.tiktok {
-      background: linear-gradient(45deg, #000000, #ff0050, #00f2ea, #000000);
-      background-size: 400% 400%;
-      animation: gradient-x 6s ease infinite;
-    }
-
-    /* X (Twitter) gradient */
-    .social-btn.twitter {
-      background: linear-gradient(45deg, #1da1f2, #0d8bd9, #0a7ec8, #000000);
-      background-size: 400% 400%;
-      animation: gradient-x 6s ease infinite;
-    }
-
-    /* เอฟเฟกต์ไอคอน */
-    .social-btn i {
-      transition: all 0.4s ease;
-      filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
-      position: relative;
-      z-index: 2;
-    }
-
-    .social-btn:hover i {
-      transform: scale(1.3) rotate(10deg);
-      filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
-    }
-
-    .social-btn span {
-      position: relative;
-      z-index: 2;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    /* ตัวควบคุมเสียง */
-    .volume-control {
-      backdrop-filter: blur(20px) saturate(180%);
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
-      border: 2px solid rgba(255, 255, 255, 0.4);
-      box-shadow:
-        0 15px 30px rgba(0, 0, 0, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-      transition: all 0.4s ease;
-    }
-
-    .volume-control:hover {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.25));
-      transform: scale(1.05) translateY(-2px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Enhanced Slider */
-    input[type=range] {
-      -webkit-appearance: none;
-      width: 120px;
-      height: 8px;
-      border-radius: 4px;
-      background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899, #10b981);
-      outline: none;
-      transition: all 0.3s ease;
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    input[type=range]:hover {
-      transform: scaleY(1.5);
-      box-shadow:
-        inset 0 2px 4px rgba(0, 0, 0, 0.2),
-        0 0 20px rgba(59, 130, 246, 0.5);
-    }
-
-    input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: linear-gradient(45deg, #ffffff, #f1f5f9, #e2e8f0);
-      border: 3px solid #3b82f6;
-      cursor: pointer;
-      box-shadow:
-        0 6px 12px rgba(0, 0, 0, 0.3),
-        0 0 0 2px rgba(59, 130, 246, 0.2);
-      transition: all 0.3s ease;
-    }
-
-    input[type=range]:hover::-webkit-slider-thumb {
-      transform: scale(1.4);
-      box-shadow:
-        0 8px 16px rgba(59, 130, 246, 0.4),
-        0 0 0 4px rgba(59, 130, 246, 0.3);
-      background: linear-gradient(45deg, #ffffff, #ddd6fe);
-    }
-
-    /* หิมะตก */
-    #snow-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 15;
-    }
-
-    /* Enhanced text effects */
-    .text-gradient {
-      background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899, #10b981);
-      background-size: 300% 300%;
-      animation: gradient-x 4s ease infinite;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-weight: 700;
-    }
-
-    .text-glow {
-      text-shadow:
-        0 0 10px rgba(59, 130, 246, 0.5),
-        0 0 20px rgba(147, 51, 234, 0.3),
-        0 4px 8px rgba(0, 0, 0, 0.5);
-    }
-
-    .description-text {
-      text-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.6),
-        0 0 15px rgba(59, 130, 246, 0.3);
-      background: linear-gradient(45deg, rgba(255, 255, 255, 0.95), rgba(240, 245, 255, 0.9));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* Loading animation */
-    .loading-spinner {
-      background: linear-gradient(45deg, #3b82f6, #8b5cf6);
-      animation: spin 1s linear infinite;
-    }
-
-    /* Star field effect */
-    .star {
-      position: fixed;
-      background: white;
-      border-radius: 50%;
-      animation: twinkle 3s infinite;
-      pointer-events: none;
-      z-index: 5;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.3; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.5); }
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      body {
-        padding: 8px;
-      }
-
-      .profile-card {
-        max-width: 95%;
-        padding: 24px 18px;
-        margin: 0 auto;
-      }
-
-      .profile-image {
-        width: 120px;
-        height: 120px;
-      }
-
-      h1 {
-        font-size: 1.5rem;
-      }
-
-      .social-btn {
-        padding: 14px 18px;
-        font-size: 16px;
-        touch-action: manipulation;
-      }
-
-      .volume-control {
-        top: 10px;
-        left: 10px;
-        padding: 10px 14px;
-        font-size: 14px;
-      }
-
-      input[type=range] {
-        width: 100px;
-      }
-
-      .floating-orb {
-        display: none;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .profile-card {
-        padding: 20px 16px;
-      }
-
-      .profile-image {
-        width: 110px;
-        height: 110px;
-      }
-
-      h1 {
-        font-size: 1.3rem;
-      }
-
-      p {
-        font-size: 15px;
-      }
-
-      .social-btn {
-        padding: 12px 16px;
-        font-size: 15px;
-      }
-    }
-
-    /* Animation delays */
-    .animate-delay-1 { animation-delay: 0.2s; }
-    .animate-delay-2 { animation-delay: 0.4s; }
-    .animate-delay-3 { animation-delay: 0.6s; }
-    .animate-delay-4 { animation-delay: 0.8s; }
-
-    /* Preloader */
-    .preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #1e293b, #0f172a, #1e1b4b);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      transition: opacity 0.8s ease;
-    }
-
-    .preloader.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .preloader-content {
+    h1 {
+      margin: 0;
       text-align: center;
-      animation: fade-in-up 1s ease-out;
+      font-family: "Sora", "Noto Sans Thai", sans-serif;
+      font-size: clamp(1.75rem, 5vw, 2.32rem);
+      font-weight: 700;
+      letter-spacing: 0.01em;
     }
 
-    .loading-ring {
-      width: 60px;
-      height: 60px;
-      border: 6px solid rgba(59, 130, 246, 0.2);
-      border-top: 6px solid #3b82f6;
+    .bio {
+      margin: 12px 0 0;
+      text-align: center;
+      color: var(--text-soft);
+      line-height: 1.65;
+      font-size: clamp(0.98rem, 2.8vw, 1.07rem);
+    }
+
+    .links {
+      margin-top: 24px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .social {
+      --brand: #9ed4f0;
+      --brand-light: #d9f2ff;
+      --brand-shadow: rgba(158, 212, 240, 0.36);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 38px 1fr auto;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(165, 206, 227, 0.28);
+      padding: 12px 14px;
+      background: linear-gradient(135deg, rgba(7, 23, 34, 0.75), rgba(13, 33, 45, 0.64));
+      transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+    }
+
+    .social::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 42%;
+      transform: translateX(-130%) skewX(-22deg);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
+      transition: transform 380ms ease;
+      pointer-events: none;
+    }
+
+    .social:hover {
+      transform: translateY(-2px);
+      border-color: var(--brand);
+      background: linear-gradient(135deg, rgba(9, 28, 41, 0.82), rgba(15, 42, 57, 0.74));
+    }
+
+    .social:hover::before {
+      transform: translateX(300%) skewX(-22deg);
+    }
+
+    .social-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: #03111b;
+      background: linear-gradient(150deg, var(--brand-light), var(--brand));
+      box-shadow: 0 8px 18px var(--brand-shadow);
+      font-size: 1.02rem;
+    }
+
+    .social-text {
+      display: grid;
+      gap: 2px;
+    }
+
+    .social-text strong {
+      font-size: 1.01rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .social-text small {
+      color: #9cc0d7;
+      font-size: 0.79rem;
+    }
+
+    .social-arrow {
+      opacity: 0.72;
+      transition: transform 180ms ease, opacity 180ms ease;
+      font-size: 0.88rem;
+    }
+
+    .social:hover .social-arrow {
+      transform: translate(2px, -2px);
+      opacity: 1;
+    }
+
+    .social.instagram {
+      --brand: #ff7b5f;
+      --brand-light: #ffd3c8;
+      --brand-shadow: rgba(255, 123, 95, 0.35);
+    }
+
+    .social.tiktok {
+      --brand: #5fd7f2;
+      --brand-light: #cbf5ff;
+      --brand-shadow: rgba(95, 215, 242, 0.35);
+    }
+
+    .social.x {
+      --brand: #b8cce4;
+      --brand-light: #e6edf6;
+      --brand-shadow: rgba(184, 204, 228, 0.32);
+    }
+
+    .social.donate {
+      --brand: #ffc76d;
+      --brand-light: #ffeec8;
+      --brand-shadow: rgba(255, 199, 109, 0.34);
+    }
+
+    .donate-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      display: grid;
+      place-items: center;
+      padding: 20px 14px;
+      background: rgba(2, 10, 16, 0.7);
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 220ms ease, visibility 220ms ease;
+    }
+
+    .donate-modal.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .donate-modal-card {
+      width: min(100%, 360px);
+      border-radius: 22px;
+      border: 1px solid rgba(180, 224, 244, 0.36);
+      background: linear-gradient(140deg, rgba(7, 24, 36, 0.95), rgba(11, 36, 50, 0.88));
+      box-shadow: 0 18px 54px rgba(0, 8, 14, 0.58);
+      padding: 18px 18px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .donate-modal-card h3 {
+      margin: 8px 0 8px;
+      font-family: "Sora", "Noto Sans Thai", sans-serif;
+      font-size: 1.15rem;
+    }
+
+    .donate-modal-card p {
+      margin: 0 0 14px;
+      color: #a9c4d6;
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .donate-qr {
+      width: min(100%, 280px);
+      aspect-ratio: 1 / 1;
+      border-radius: 16px;
+      border: 1px solid rgba(187, 228, 247, 0.33);
+      object-fit: cover;
+      background: rgba(4, 19, 29, 0.9);
+      display: block;
+      margin: 0 auto;
+    }
+
+    .donate-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 0 auto 20px;
+      border: 0;
+      cursor: pointer;
+      color: #083040;
+      background: linear-gradient(145deg, #d8f3ff, #9fd7ec);
+      box-shadow: 0 8px 16px rgba(16, 104, 130, 0.34);
+    }
+
+    .footer-note {
+      margin: 22px 0 0;
+      text-align: center;
+      color: #9bc0d5;
+      font-size: 0.82rem;
+      letter-spacing: 0.01em;
+    }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 480ms ease, transform 480ms ease;
+      transition-delay: var(--d, 0ms);
+    }
+
+    body.ready [data-reveal] {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes ring-pulse {
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.56;
+      }
+
+      50% {
+        transform: scale(1.06);
+        opacity: 0.28;
+      }
+    }
+
+    @keyframes grid-shift {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      100% {
+        transform: translate3d(-24px, -24px, 0);
+      }
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding: 20px 12px 96px;
+      }
+
+      .audio-panel {
+        top: auto;
+        bottom: 14px;
+        right: 50%;
+        transform: translateX(50%);
+        width: min(92vw, 360px);
+        justify-content: center;
+      }
+
+      .audio-range {
+        width: min(52vw, 170px);
+      }
+
+      .profile-card {
+        border-radius: 24px;
+      }
+
+      .landing-card {
+        border-radius: 22px;
+      }
+
+      .avatar-wrap {
+        width: 118px;
+        height: 118px;
+      }
+
+      .social {
+        grid-template-columns: 36px 1fr auto;
+        padding: 11px 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      [data-reveal] {
+        opacity: 1 !important;
+        transform: none !important;
+      }
     }
   </style>
 </head>
-<body class="min-h-screen flex items-center justify-center overflow-hidden">
-
-  <!-- Preloader -->
-  <div id="preloader" class="preloader">
-    <div class="preloader-content">
-      <div class="loading-ring"></div>
-      <p class="text-white text-xl font-medium mb-2">กำลังโหลด...</p>
-      <p class="text-blue-300 text-sm">เตรียมความพร้อม ✨</p>
-    </div>
-  </div>
-
-  <!-- เพลงพื้นหลัง -->
-  <audio id="bg-music" preload="auto" loop>
-    <source src="music.mp3" type="audio/mpeg">
-    เบราว์เซอร์ไม่รองรับการเล่นเสียง
-  </audio>
-
-  <!-- Floating orbs -->
-  <div class="floating-orb orb-1"></div>
-  <div class="floating-orb orb-2"></div>
-  <div class="floating-orb orb-3"></div>
-  <div class="floating-orb orb-4"></div>
-
-  <!-- Background overlay -->
-  <div class="bg-overlay"></div>
-
-  <!-- ตัวควบคุมเสียงมุมซ้ายบน -->
-  <div class="volume-control fixed top-4 left-4 flex items-center gap-4 px-5 py-3 rounded-full shadow-2xl z-50">
-    <button id="mute-btn" class="text-white text-lg transition-all duration-300 hover:scale-125 hover:text-blue-300">
-      <i class="fas fa-volume-up"></i>
-    </button>
-    <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="0.7">
-  </div>
-
-  <!-- วิดีโอพื้นหลัง -->
+<body class="show-landing">
   <video autoplay muted loop id="bg-video" playsinline>
     <source src="bg.mp4" type="video/mp4">
-    เบราว์เซอร์ไม่รองรับการเล่นวิดีโอ
   </video>
+  <div class="scene-overlay" aria-hidden="true"></div>
+  <div class="scene-grid" aria-hidden="true"></div>
 
-  <!-- การ์ดโปรไฟล์ -->
-  <div class="profile-card rounded-3xl p-10 max-w-md text-center transform transition-all duration-700 relative z-20 animate-float opacity-0 animate-fade-in-up">
-
-    <!-- โปรไฟล์ -->
-    <div class="profile-image-container relative w-36 h-36 mx-auto mb-8 animate-delay-1 opacity-0 animate-fade-in-up">
-      <div class="profile-ring"></div>
-      <img src="profile.jpg" alt="Profile Picture @pch__2525"
-           class="profile-image w-36 h-36 rounded-full object-cover transition-all duration-500 hover:scale-110 animate-pulse-slow"
-           loading="eager">
-      <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-400 via-purple-500 to-pink-500 opacity-20 animate-glow"></div>
+  <section class="landing-screen" id="landing-screen" aria-label="หน้าแรก">
+    <div class="landing-card">
+      <p class="landing-eyebrow">Welcome</p>
+      <h2>ยินดีต้อนรับเข้าสู่หน้าโปรไฟล์</h2>
+      <p>กดปุ่มด้านล่างเพื่อไปยังหน้าติดตามและช่องทางโซเชียลทั้งหมด</p>
+      <button id="enter-site" class="enter-site" type="button">เข้าสู่หน้าโปรไฟล์</button>
     </div>
+  </section>
 
-    <!-- ชื่อและคำอธิบาย -->
-    <h1 class="text-3xl font-bold mb-4 text-gradient text-glow animate-delay-2 opacity-0 animate-fade-in-up animate-wave">
-      @pch__2525
-    </h1>
-    <p class="description-text mb-8 leading-relaxed font-medium text-lg animate-delay-3 opacity-0 animate-fade-in-up">
-      กำลังมองหาเพื่อนใหม่หรอคุณ 🌟<br>
-      เข้ามาแล้วอย่าลืมทักทายกันนะ! 💫
-    </p>
+  <audio id="bg-music" preload="auto" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
 
-    <!-- ปุ่มช่องทางติดตาม -->
-    <div class="space-y-5 animate-delay-4 opacity-0 animate-fade-in-up">
-      <a href="https://instagram.com/pch__2525" target="_blank" rel="noopener noreferrer"
-         class="social-btn instagram flex items-center justify-center gap-4 w-full text-white py-4 px-6 rounded-2xl shadow-2xl font-medium text-lg"
-         aria-label="ติดตาม Instagram">
-         <i class="fab fa-instagram text-2xl"></i>
-         <span>Instagram</span>
-      </a>
-
-      <a href="https://www.tiktok.com/@pch_400" target="_blank" rel="noopener noreferrer"
-         class="social-btn tiktok flex items-center justify-center gap-4 w-full text-white py-4 px-6 rounded-2xl shadow-2xl font-medium text-lg"
-         aria-label="ติดตาม TikTok">
-         <i class="fab fa-tiktok text-2xl"></i>
-         <span>TikTok</span>
-      </a>
-
-      <a href="https://x.com/pozzzzzz57" target="_blank" rel="noopener noreferrer"
-         class="social-btn twitter flex items-center justify-center gap-4 w-full text-white py-4 px-6 rounded-2xl shadow-2xl font-medium text-lg"
-         aria-label="ติดตาม X (Twitter)">
-         <i class="fab fa-x-twitter text-2xl"></i>
-         <span>X (Twitter)</span>
-      </a>
-    </div>
-
-    <!-- footer -->
-    <p class="text-sm text-gray-200 mt-8 opacity-90 animate-bounce-slow font-medium">
-      © 2025 สร้างด้วยความรัก ❤️ และเทคโนโลยี ⚡
-    </p>
+  <div class="audio-panel" role="group" aria-label="การควบคุมเสียงพื้นหลัง">
+    <button id="audio-toggle" class="audio-toggle" aria-label="เปิดหรือปิดเสียง">
+      <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+    </button>
+    <input
+      id="audio-range"
+      class="audio-range"
+      type="range"
+      min="0"
+      max="1"
+      step="0.01"
+      value="0.45"
+      aria-label="ระดับเสียงเพลง"
+    >
   </div>
 
-  <!-- Canvas หิมะตก -->
-  <canvas id="snow-canvas"></canvas>
+  <main class="profile-shell">
+    <section class="profile-card" aria-label="ข้อมูลโปรไฟล์ @pch__2525">
+      <p class="eyebrow" data-reveal style="--d: 60ms;">Connect With Me</p>
+
+      <figure class="avatar-wrap" data-reveal style="--d: 150ms;">
+        <img src="profile.jpg" alt="รูปโปรไฟล์ของ @pch__2525" loading="eager">
+      </figure>
+
+      <h1 data-reveal style="--d: 240ms;">@pch__2525</h1>
+      <p class="bio" data-reveal style="--d: 330ms;">
+        กำลังมองหาเพื่อนใหม่อยู่ไหม?<br>
+        เข้ามาแล้วทักกันได้เลย แล้วเจอกันในทุกแพลตฟอร์ม
+      </p>
+
+      <div class="links" data-reveal style="--d: 420ms;">
+        <a href="https://instagram.com/pch__2525" target="_blank" rel="noopener noreferrer" class="social instagram" aria-label="ติดตาม Instagram">
+          <span class="social-icon"><i class="fab fa-instagram" aria-hidden="true"></i></span>
+          <span class="social-text">
+            <strong>Instagram</strong>
+            <small>@pch__2525</small>
+          </span>
+          <i class="fa-solid fa-arrow-up-right-from-square social-arrow" aria-hidden="true"></i>
+        </a>
+
+        <a href="https://www.tiktok.com/@pch_400" target="_blank" rel="noopener noreferrer" class="social tiktok" aria-label="ติดตาม TikTok">
+          <span class="social-icon"><i class="fab fa-tiktok" aria-hidden="true"></i></span>
+          <span class="social-text">
+            <strong>TikTok</strong>
+            <small>@pch_400</small>
+          </span>
+          <i class="fa-solid fa-arrow-up-right-from-square social-arrow" aria-hidden="true"></i>
+        </a>
+
+        <a href="https://x.com/pozzzzzz57" target="_blank" rel="noopener noreferrer" class="social x" aria-label="ติดตาม X">
+          <span class="social-icon"><i class="fab fa-x-twitter" aria-hidden="true"></i></span>
+          <span class="social-text">
+            <strong>X</strong>
+            <small>@pozzzzzz57</small>
+          </span>
+          <i class="fa-solid fa-arrow-up-right-from-square social-arrow" aria-hidden="true"></i>
+        </a>
+
+        <a href="donate-qr.jpg.jpg" id="donate-button" class="social donate" aria-label="เปิด QR สำหรับสนับสนุน">
+          <span class="social-icon"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i></span>
+          <span class="social-text">
+            <strong>Donate</strong>
+            <small>กดเพื่อดู QR สนับสนุน</small>
+          </span>
+          <i class="fa-solid fa-arrow-up-right-from-square social-arrow" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <p class="footer-note" data-reveal style="--d: 500ms;">2026 • ขอบคุณที่แวะมา</p>
+    </section>
+  </main>
+
+  <div id="donate-modal" class="donate-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="QR สำหรับสนับสนุน">
+    <div class="donate-modal-card">
+      <button id="donate-close" class="donate-close" type="button" aria-label="ปิดหน้าต่าง">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <h3>สแกน QR เพื่อสนับสนุน</h3>
+      <p> <strong></strong></p>
+      <img class="donate-qr" src="donate-qr.jpg" alt="QR สำหรับสนับสนุน">
+    </div>
+  </div>
 
   <script>
-    // ===============================
-    // Preloader
-    // ===============================
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.getElementById('preloader').classList.add('hidden');
+    const video = document.getElementById("bg-video");
+    const music = document.getElementById("bg-music");
+    const audioToggle = document.getElementById("audio-toggle");
+    const audioRange = document.getElementById("audio-range");
+    const landingScreen = document.getElementById("landing-screen");
+    const enterSiteButton = document.getElementById("enter-site");
+    const donateButton = document.getElementById("donate-button");
+    const donateModal = document.getElementById("donate-modal");
+    const donateClose = document.getElementById("donate-close");
 
-        // เล่นเพลงอัตโนมัติทันทีหลัง preloader หายไป
-        setTimeout(() => {
-          music.muted = false;
-          music.play().catch(e => {
-            console.log('ไม่สามารถเล่นเพลงอัตโนมัติได้:', e);
-            // ถ้าเล่นไม่ได้ จะรอให้ผู้ใช้ interact ครั้งแรก
-          });
-        }, 100);
+    let audioUnlocked = false;
 
-        // แสดงการ์ดโปรไฟล์หลังจาก preloader หายไป
-        setTimeout(() => {
-          document.querySelector('.profile-card').style.opacity = '1';
-          // แสดงองค์ประกอบต่างๆ ทีละตัว
-          document.querySelectorAll('.opacity-0').forEach((el, index) => {
-            setTimeout(() => {
-              el.style.opacity = '1';
-            }, index * 200);
-          });
-        }, 300);
-      }, 1200);
-    });
-
-    // ===============================
-    // Star field effect
-    // ===============================
-    function createStars() {
-      const starCount = window.innerWidth < 768 ? 15 : 30;
-      for (let i = 0; i < starCount; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
-        star.style.left = Math.random() * 100 + '%';
-        star.style.top = Math.random() * 100 + '%';
-        star.style.width = star.style.height = (Math.random() * 3 + 1) + 'px';
-        star.style.animationDelay = Math.random() * 3 + 's';
-        document.body.appendChild(star);
-      }
+    function syncAudioUi() {
+      const icon = audioToggle.querySelector("i");
+      const muted = music.muted || Number(audioRange.value) === 0;
+      icon.className = muted ? "fa-solid fa-volume-xmark" : "fa-solid fa-volume-high";
+      audioToggle.setAttribute("aria-label", muted ? "เปิดเสียง" : "ปิดเสียง");
     }
-    createStars();
 
-    // ===============================
-    // เพลง + ควบคุมเสียง
-    // ===============================
-    const music = document.getElementById('bg-music');
-    const muteBtn = document.getElementById('mute-btn');
-    const volumeSlider = document.getElementById('volume-slider');
-
-    // ตั้งค่าเริ่มต้น
-    music.volume = 0.7;
-
-    // สำรองกรณีเพลงไม่เล่นอัตโนมัติ (บางเบราว์เซอร์อาจบล็อก)
-    const handleBackupInteraction = () => {
-      if (music.paused) {
-        music.muted = false;
-        music.play().catch(e => console.log('ไม่สามารถเล่นเพลงได้:', e));
+    function unlockAudio() {
+      if (audioUnlocked) {
+        return;
       }
-    };
 
-    document.addEventListener('click', handleBackupInteraction, {once: true});
-    document.addEventListener('touchstart', handleBackupInteraction, {once: true});
-
-    // Mute/Unmute
-    muteBtn.addEventListener('click', () => {
-      music.muted = !music.muted;
-      muteBtn.innerHTML = music.muted ?
-        '<i class="fas fa-volume-mute"></i>' :
-        '<i class="fas fa-volume-up"></i>';
-
-      // เอฟเฟกต์ animation
-      muteBtn.style.transform = 'scale(0.8)';
-      setTimeout(() => muteBtn.style.transform = 'scale(1)', 150);
-    });
-
-    // ปรับระดับเสียง
-    volumeSlider.addEventListener('input', () => {
-      music.volume = volumeSlider.value;
-      if (music.volume === 0) {
+      audioUnlocked = true;
+      music.muted = false;
+      music.play().catch(() => {
         music.muted = true;
-        muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-      } else {
+        syncAudioUi();
+      });
+    }
+
+    function enterProfile() {
+      if (!document.body.classList.contains("show-landing")) {
+        return;
+      }
+
+      document.body.classList.remove("show-landing");
+      landingScreen.setAttribute("aria-hidden", "true");
+      requestAnimationFrame(() => {
+        document.body.classList.add("ready");
+      });
+      unlockAudio();
+    }
+
+    function openDonateModal() {
+      donateModal.classList.add("open");
+      donateModal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeDonateModal() {
+      donateModal.classList.remove("open");
+      donateModal.setAttribute("aria-hidden", "true");
+    }
+
+    ["pointerdown", "keydown", "touchstart"].forEach((eventName) => {
+      window.addEventListener(eventName, unlockAudio, { once: true, passive: true });
+    });
+
+    enterSiteButton.addEventListener("click", enterProfile);
+
+    donateButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      openDonateModal();
+    });
+
+    donateClose.addEventListener("click", closeDonateModal);
+
+    donateModal.addEventListener("click", (event) => {
+      if (event.target === donateModal) {
+        closeDonateModal();
+      }
+    });
+
+    audioRange.addEventListener("input", () => {
+      music.volume = Number(audioRange.value);
+      music.muted = music.volume === 0;
+      if (!music.muted && music.paused) {
+        music.play().catch(() => {});
+      }
+      syncAudioUi();
+    });
+
+    audioToggle.addEventListener("click", () => {
+      if (music.paused) {
+        music.play().catch(() => {});
+      }
+
+      if (music.muted || Number(audioRange.value) === 0) {
+        if (Number(audioRange.value) === 0) {
+          audioRange.value = "0.45";
+          music.volume = 0.45;
+        }
         music.muted = false;
-        muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-      }
-    });
-
-    // ===============================
-    // Canvas หิมะตก (ปรับปรุง)
-    // ===============================
-    const canvas = document.getElementById('snow-canvas');
-    const ctx = canvas.getContext('2d');
-
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    resizeCanvas();
-
-    const snowCount = window.innerWidth < 768 ? 40 : 80;
-    const flakes = [];
-
-    // สร้างหิมะ
-    for (let i = 0; i < snowCount; i++) {
-      flakes.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 4 + 1,
-        speed: Math.random() * 2 + 0.5,
-        swing: Math.random() * 2 + 0.5,
-        angle: Math.random() * Math.PI * 2,
-        opacity: Math.random() * 0.8 + 0.3,
-        sparkle: Math.random() > 0.7
-      });
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      for (const f of flakes) {
-        f.y += f.speed;
-        f.x += Math.sin(f.angle) * f.swing;
-        f.angle += 0.01;
-
-        // Reset ตำแหน่งเมื่อหิมะตกลงล่าง
-        if (f.y > canvas.height + 10) {
-          f.y = -10;
-          f.x = Math.random() * canvas.width;
-        }
-
-        // Reset ตำแหน่งเมื่อหิมะออกจากขอบ
-        if (f.x > canvas.width + 10) f.x = -10;
-        if (f.x < -10) f.x = canvas.width + 10;
-
-        // วาดหิมะ
-        ctx.globalAlpha = f.opacity;
-        ctx.beginPath();
-        ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
-
-        if (f.sparkle) {
-          // หิมะเป็นประกาย
-          const gradient = ctx.createRadialGradient(f.x, f.y, 0, f.x, f.y, f.r);
-          gradient.addColorStop(0, "rgba(255, 255, 255, 1)");
-          gradient.addColorStop(0.5, "rgba(200, 220, 255, 0.8)");
-          gradient.addColorStop(1, "rgba(100, 150, 255, 0.3)");
-          ctx.fillStyle = gradient;
-        } else {
-          ctx.fillStyle = "white";
-        }
-
-        ctx.fill();
-
-        // เพิ่ม glow effect
-        ctx.shadowColor = "rgba(255, 255, 255, 0.5)";
-        ctx.shadowBlur = f.r * 2;
-        ctx.fill();
-        ctx.shadowBlur = 0;
-
-        ctx.globalAlpha = 1;
-      }
-
-      requestAnimationFrame(animate);
-    }
-    animate();
-
-    // Event listeners
-    window.addEventListener('resize', () => {
-      setTimeout(resizeCanvas, 100);
-    });
-
-    window.addEventListener('orientationchange', () => {
-      setTimeout(resizeCanvas, 200);
-    });
-
-    // ===============================
-    // Enhanced social button interactions
-    // ===============================
-    document.querySelectorAll('.social-btn').forEach(btn => {
-      btn.addEventListener('mouseenter', () => {
-        btn.style.filter = 'brightness(1.1) saturate(1.2)';
-      });
-
-      btn.addEventListener('mouseleave', () => {
-        btn.style.filter = 'brightness(1) saturate(1)';
-      });
-
-      btn.addEventListener('click', (e) => {
-        // Ripple effect
-        const rect = btn.getBoundingClientRect();
-        const ripple = document.createElement('span');
-        const size = Math.max(rect.width, rect.height);
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
-        ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
-        ripple.style.position = 'absolute';
-        ripple.style.borderRadius = '50%';
-        ripple.style.background = 'rgba(255, 255, 255, 0.3)';
-        ripple.style.transform = 'scale(0)';
-        ripple.style.animation = 'ripple 0.6s ease-out';
-        ripple.style.pointerEvents = 'none';
-
-        btn.appendChild(ripple);
-
-        setTimeout(() => {
-          ripple.remove();
-        }, 600);
-
-        const platform = e.currentTarget.textContent.trim();
-        console.log(`คลิก: ${platform}`);
-      });
-    });
-
-    // Add ripple animation
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes ripple {
-        from {
-          transform: scale(0);
-          opacity: 1;
-        }
-        to {
-          transform: scale(1);
-          opacity: 0;
-        }
-      }
-    `;
-    document.head.appendChild(style);
-
-    // ===============================
-    // Error handling
-    // ===============================
-
-    // Handle music loading errors
-    music.addEventListener('error', () => {
-      console.log('ไม่สามารถโหลดไฟล์เพลงได้');
-      document.querySelector('.volume-control').style.display = 'none';
-    });
-
-    // Handle video loading errors
-    const video = document.getElementById('bg-video');
-    video.addEventListener('error', () => {
-      console.log('ไม่สามารถโหลดไฟล์วิดีโอได้');
-      document.body.style.background = 'linear-gradient(135deg, #1e293b, #0f172a, #1e1b4b)';
-    });
-
-    // ===============================
-    // Performance optimization
-    // ===============================
-
-    // Reduce animations on low-end devices
-    if (navigator.hardwareConcurrency < 4) {
-      document.querySelectorAll('.floating-orb').forEach(orb => {
-        orb.style.display = 'none';
-      });
-    }
-
-    // Pause animations when page is not visible
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        document.querySelectorAll('*').forEach(el => {
-          el.style.animationPlayState = 'paused';
-        });
       } else {
-        document.querySelectorAll('*').forEach(el => {
-          el.style.animationPlayState = 'running';
-        });
+        music.muted = true;
+      }
+
+      syncAudioUi();
+    });
+
+    video.addEventListener("error", () => {
+      document.body.classList.add("video-fallback");
+    });
+
+    music.volume = Number(audioRange.value);
+    syncAudioUi();
+
+    window.addEventListener("load", () => {
+      if (document.body.classList.contains("show-landing")) {
+        return;
+      }
+      requestAnimationFrame(() => {
+        document.body.classList.add("ready");
+      });
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && donateModal.classList.contains("open")) {
+        closeDonateModal();
       }
     });
   </script>
 
-  <!-- Schema.org structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "@pch__2525",
-    "description": "กำลังมองหาเพื่อนใหม่หรอคุณ เข้ามาแล้วอย่าลืมทักทายกันนะ!",
+    "description": "เข้ามาแล้วทักกันได้นะ ติดตามได้ทุกช่องทางที่นี่",
     "sameAs": [
       "https://instagram.com/pch__2525",
       "https://www.tiktok.com/@pch_400",
@@ -892,4 +851,3 @@
   </script>
 </body>
 </html>
-
