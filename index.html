@@ -425,6 +425,12 @@
       --brand-shadow: rgba(255, 123, 95, 0.35);
     }
 
+    .social.facebook {
+      --brand: #5b8fff;
+      --brand-light: #d4e2ff;
+      --brand-shadow: rgba(91, 143, 255, 0.34);
+    }
+
     .social.tiktok {
       --brand: #5fd7f2;
       --brand-light: #cbf5ff;
@@ -558,20 +564,34 @@
 
     @media (max-width: 720px) {
       body {
-        padding: 20px 12px 96px;
+        padding: 20px 12px calc(138px + env(safe-area-inset-bottom));
+        overflow-x: hidden;
+        overflow-y: auto;
+        place-items: start center;
       }
 
       .audio-panel {
         top: auto;
-        bottom: 14px;
-        right: 50%;
-        transform: translateX(50%);
+        bottom: calc(12px + env(safe-area-inset-bottom));
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
         width: min(92vw, 360px);
         justify-content: center;
+        gap: 10px;
+        padding: 9px 12px;
+        border-color: rgba(179, 224, 246, 0.42);
+        background: linear-gradient(140deg, rgba(5, 18, 28, 0.82), rgba(5, 28, 39, 0.72));
+        box-shadow: 0 12px 28px rgba(0, 8, 14, 0.54);
+      }
+
+      .audio-toggle {
+        width: 34px;
+        height: 34px;
       }
 
       .audio-range {
-        width: min(52vw, 170px);
+        width: min(54vw, 172px);
       }
 
       .profile-card {
@@ -659,6 +679,15 @@
       </p>
 
       <div class="links" data-reveal style="--d: 420ms;">
+        <a href="https://www.facebook.com/piyawat.pi.2025" target="_blank" rel="noopener noreferrer" class="social facebook" aria-label="ติดตาม Facebook">
+          <span class="social-icon"><i class="fab fa-facebook-f" aria-hidden="true"></i></span>
+          <span class="social-text">
+            <strong>Facebook</strong>
+            <small>@pch__2525</small>
+          </span>
+          <i class="fa-solid fa-arrow-up-right-from-square social-arrow" aria-hidden="true"></i>
+        </a>
+
         <a href="https://instagram.com/pch__2525" target="_blank" rel="noopener noreferrer" class="social instagram" aria-label="ติดตาม Instagram">
           <span class="social-icon"><i class="fab fa-instagram" aria-hidden="true"></i></span>
           <span class="social-text">
@@ -843,6 +872,7 @@
     "name": "@pch__2525",
     "description": "เข้ามาแล้วทักกันได้นะ ติดตามได้ทุกช่องทางที่นี่",
     "sameAs": [
+      "https://facebook.com/pch__2525",
       "https://instagram.com/pch__2525",
       "https://www.tiktok.com/@pch_400",
       "https://x.com/pozzzzzz57"
