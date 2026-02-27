@@ -270,7 +270,56 @@
       width: min(100%, 540px);
       position: relative;
       z-index: 2;
+      perspective: 1400px;
+      transform-style: preserve-3d;
       transition: opacity 300ms ease, transform 300ms ease, visibility 300ms ease;
+    }
+
+    .depth-stage {
+      position: absolute;
+      inset: -26px -22px;
+      z-index: 1;
+      pointer-events: none;
+      transform-style: preserve-3d;
+      transition: transform 220ms ease;
+    }
+
+    .depth-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(0.6px);
+      opacity: 0.56;
+      will-change: transform;
+    }
+
+    .depth-orb.orb-a {
+      width: 170px;
+      height: 170px;
+      top: -28px;
+      right: -40px;
+      background: radial-gradient(circle at 30% 28%, rgba(190, 246, 255, 0.82), rgba(70, 171, 219, 0.12) 72%);
+      box-shadow: 0 0 44px rgba(86, 191, 226, 0.42);
+      animation: depth-orb-a 9.5s ease-in-out infinite;
+    }
+
+    .depth-orb.orb-b {
+      width: 130px;
+      height: 130px;
+      bottom: 20px;
+      left: -44px;
+      background: radial-gradient(circle at 62% 34%, rgba(146, 245, 216, 0.78), rgba(48, 164, 141, 0.12) 72%);
+      box-shadow: 0 0 40px rgba(66, 194, 164, 0.34);
+      animation: depth-orb-b 8.8s ease-in-out infinite;
+    }
+
+    .depth-orb.orb-c {
+      width: 92px;
+      height: 92px;
+      bottom: -10px;
+      right: 34%;
+      background: radial-gradient(circle at 30% 26%, rgba(220, 249, 255, 0.7), rgba(111, 201, 234, 0.12) 74%);
+      box-shadow: 0 0 34px rgba(120, 208, 236, 0.28);
+      animation: depth-orb-c 10.5s ease-in-out infinite;
     }
 
     body.show-landing .profile-shell,
@@ -298,8 +347,11 @@
       box-shadow: var(--shadow);
       padding: clamp(22px, 4vw, 36px);
       position: relative;
+      z-index: 2;
       overflow: hidden;
       isolation: isolate;
+      transform-style: preserve-3d;
+      transition: box-shadow 220ms ease;
     }
 
     .profile-card::before {
@@ -328,9 +380,34 @@
       z-index: 0;
     }
 
+    .card-reflection {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.58;
+      background:
+        linear-gradient(118deg,
+          transparent 26%,
+          rgba(210, 243, 255, 0.05) 34%,
+          rgba(243, 252, 255, 0.26) 42%,
+          rgba(176, 231, 249, 0.14) 50%,
+          transparent 62%),
+        radial-gradient(55% 34% at 76% 4%, rgba(188, 237, 255, 0.16), transparent 76%);
+      transform: translate3d(-130%, 0, 0) skewX(-16deg);
+      animation: card-reflection-sweep 9.6s cubic-bezier(.25, .5, .25, 1) infinite;
+      will-change: transform, opacity;
+    }
+
     .profile-card > * {
       position: relative;
       z-index: 1;
+    }
+
+    .profile-card > .card-reflection {
+      position: absolute;
+      z-index: 0;
     }
 
     .eyebrow {
@@ -392,10 +469,39 @@
       font-size: clamp(0.98rem, 2.8vw, 1.07rem);
     }
 
+    .trust-strip {
+      margin: 16px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      --z: 24px;
+    }
+
+    .trust-strip span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(174, 218, 238, 0.34);
+      background: linear-gradient(140deg, rgba(8, 30, 43, 0.85), rgba(13, 46, 62, 0.7));
+      box-shadow: inset 0 0 0 1px rgba(205, 237, 251, 0.04);
+      color: #d7ecf7;
+      font: 600 0.73rem/1 "Sora", sans-serif;
+      letter-spacing: 0.03em;
+    }
+
+    .trust-strip i {
+      color: #7ce6c8;
+      font-size: 0.72rem;
+    }
+
     .links {
       margin-top: 24px;
       display: grid;
       gap: 12px;
+      --z: 18px;
     }
 
     .social {
@@ -417,6 +523,8 @@
       box-shadow:
         inset 0 0 0 1px rgba(198, 233, 249, 0.04),
         0 10px 24px rgba(1, 7, 12, 0.35);
+      transform: translateZ(0);
+      transform-style: preserve-3d;
       transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
     }
 
@@ -446,7 +554,7 @@
     }
 
     .social:hover {
-      transform: translateY(-3px);
+      transform: translate3d(0, -3px, 10px);
       border-color: var(--brand);
       background: linear-gradient(135deg, rgba(9, 28, 41, 0.82), rgba(15, 42, 57, 0.74));
       box-shadow:
@@ -459,7 +567,7 @@
     }
 
     .social:active {
-      transform: translateY(-1px) scale(0.997);
+      transform: translate3d(0, -1px, 6px) scale(0.997);
     }
 
     .social:focus-visible {
@@ -478,11 +586,12 @@
       background: linear-gradient(150deg, var(--brand-light), var(--brand));
       box-shadow: 0 8px 18px var(--brand-shadow);
       font-size: 1.02rem;
+      transform: translateZ(9px);
       transition: transform 180ms ease, box-shadow 180ms ease;
     }
 
     .social:hover .social-icon {
-      transform: scale(1.06);
+      transform: translateZ(9px) scale(1.06);
       box-shadow: 0 10px 20px var(--brand-shadow);
     }
 
@@ -619,18 +728,35 @@
       color: #9bc0d5;
       font-size: 0.82rem;
       letter-spacing: 0.01em;
+      --z: 14px;
+    }
+
+    .eyebrow {
+      --z: 18px;
+    }
+
+    .avatar-wrap {
+      --z: 40px;
+    }
+
+    h1 {
+      --z: 28px;
+    }
+
+    .bio {
+      --z: 22px;
     }
 
     [data-reveal] {
       opacity: 0;
-      transform: translateY(18px);
+      transform: translate3d(0, 18px, var(--z, 0px));
       transition: opacity 480ms ease, transform 480ms ease;
       transition-delay: var(--d, 0ms);
     }
 
     body.ready [data-reveal] {
       opacity: 1;
-      transform: translateY(0);
+      transform: translate3d(0, 0, var(--z, 0px));
     }
 
     @keyframes ring-pulse {
@@ -701,6 +827,61 @@
       }
     }
 
+    @keyframes depth-orb-a {
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate3d(-14px, 9px, 0) scale(1.08);
+      }
+    }
+
+    @keyframes depth-orb-b {
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate3d(12px, -10px, 0) scale(1.06);
+      }
+    }
+
+    @keyframes depth-orb-c {
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate3d(8px, 8px, 0) scale(1.08);
+      }
+    }
+
+    @keyframes card-reflection-sweep {
+      0%,
+      30% {
+        transform: translate3d(-130%, 0, 0) skewX(-16deg);
+        opacity: 0;
+      }
+
+      40% {
+        opacity: 0.62;
+      }
+
+      52% {
+        transform: translate3d(138%, 0, 0) skewX(-16deg);
+        opacity: 0.2;
+      }
+
+      100% {
+        transform: translate3d(138%, 0, 0) skewX(-16deg);
+        opacity: 0;
+      }
+    }
+
     @media (max-width: 720px) {
       body {
         padding: 20px 12px calc(138px + env(safe-area-inset-bottom));
@@ -735,6 +916,7 @@
 
       .profile-card {
         border-radius: 24px;
+        transform: none !important;
       }
 
       .landing-card {
@@ -742,9 +924,23 @@
         padding: clamp(22px, 7vw, 30px);
       }
 
+      .depth-stage {
+        inset: -18px -10px;
+        opacity: 0.62;
+      }
+
       .avatar-wrap {
         width: 118px;
         height: 118px;
+      }
+
+      .trust-strip {
+        gap: 7px;
+      }
+
+      .trust-strip span {
+        font-size: 0.69rem;
+        padding: 6px 9px;
       }
 
       .tap-hint {
@@ -778,6 +974,18 @@
 
       [data-reveal] {
         opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .depth-stage {
+        display: none !important;
+      }
+
+      .card-reflection {
+        display: none !important;
+      }
+
+      .profile-card {
         transform: none !important;
       }
     }
@@ -820,7 +1028,14 @@
   </div>
 
   <main class="profile-shell">
+    <div class="depth-stage" aria-hidden="true">
+      <span class="depth-orb orb-a"></span>
+      <span class="depth-orb orb-b"></span>
+      <span class="depth-orb orb-c"></span>
+    </div>
+
     <section class="profile-card" aria-label="ข้อมูลโปรไฟล์ @pch__2525">
+      <div class="card-reflection" aria-hidden="true"></div>
       <p class="eyebrow" data-reveal style="--d: 60ms;">Connect With Me</p>
 
       <figure class="avatar-wrap" data-reveal style="--d: 150ms;">
@@ -833,7 +1048,13 @@
         เข้ามาแล้วทักกันได้เลย แล้วเจอกันในทุกแพลตฟอร์ม
       </p>
 
-      <div class="links" data-reveal style="--d: 420ms;">
+      <div class="trust-strip" data-reveal style="--d: 420ms;" aria-label="ความน่าเชื่อถือของหน้าเว็บ">
+        <span><i class="fa-solid fa-link" aria-hidden="true"></i>Official Links</span>
+        <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i>Secure Access</span>
+        <span><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Updated 2026</span>
+      </div>
+
+      <div class="links" data-reveal style="--d: 500ms;">
         <a href="https://www.facebook.com/piyawat.pi.2025" target="_blank" rel="noopener noreferrer" class="social facebook" aria-label="ติดตาม Facebook">
           <span class="social-icon"><i class="fab fa-facebook-f" aria-hidden="true"></i></span>
           <span class="social-text">
@@ -870,7 +1091,7 @@
           <i class="fa-solid fa-arrow-up-right-from-square social-arrow" aria-hidden="true"></i>
         </a>
 
-        <a href="donate-qr.jpg.jpg" id="donate-button" class="social donate" aria-label="เปิด QR สำหรับสนับสนุน">
+        <a href="donate-qr.jpg" id="donate-button" class="social donate" aria-label="เปิด QR สำหรับสนับสนุน">
           <span class="social-icon"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i></span>
           <span class="social-text">
             <strong>Donate</strong>
@@ -880,7 +1101,7 @@
         </a>
       </div>
 
-      <p class="footer-note" data-reveal style="--d: 500ms;">2026 • ขอบคุณที่แวะมา</p>
+      <p class="footer-note" data-reveal style="--d: 580ms;">2026 • ขอบคุณที่แวะมา</p>
     </section>
   </main>
 
